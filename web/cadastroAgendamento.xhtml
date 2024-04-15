@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <body>
+        <ui:composition template="./WEB-INF/template/publicTemplate.xhtml">
+            <ui:param name="pageTitle" value="Agendmento"/>
+            <ui:define name="content">
+                <h3>#{pageTitle}</h3>
+                
+                <h:form>
+                    <h:messages/>
+                    <h:link outcome="index" value="Página inicial"/>
+                    <h:panelGrid columns="1">
+                        <h:outputLabel for="itHorario" value="Horario"/>
+                        <h:outputText id="itHorario" value="#{strData}" />
+
+                        <h:outputLabel for="itNome" value="Nome:"/>
+                        <h:inputText id="itNome" value="#{mainPublicMB.agendamento.nome}">
+                        </h:inputText>
+                        
+                        <h:outputLabel for="itContato" value="Contato"/>
+                        <h:inputText id="itContato" value="#{mainPublicMB.agendamento.contato}">
+                        </h:inputText>
+                        
+                        <h:outputLabel for="itObservacao" value="Observação"/>
+                        <h:inputTextarea id="itObservacao" value="#{mainPublicMB.agendamento.observacao}">
+                        </h:inputTextarea>
+
+                        <f:facet name="footer">
+                            <h:commandButton value="salvar" action="#{mainPublicMB.salvar}"/>
+                        </f:facet>
+                    </h:panelGrid>
+                </h:form>
+                <br />
+            </ui:define>          
+        </ui:composition>
+    </body>
+</html>
