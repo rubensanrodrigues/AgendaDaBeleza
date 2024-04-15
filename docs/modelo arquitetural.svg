@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="modelo arquitetural.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.95917005"
+     inkscape:cx="548.39077"
+     inkscape:cy="461.33634"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10"
+     showguides="true"
+     inkscape:export-bgcolor="#ffffffff" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g10"
+       transform="matrix(1.7,0,0,1.7,-146.06344,-68.712101)">
+      <rect
+         style="fill:#aa87de;stroke:#000000;stroke-width:0.5;stroke-dasharray:none"
+         id="rect1"
+         width="99.684845"
+         height="11.544211"
+         x="98.468849"
+         y="129.09749"
+         ry="0"
+         inkscape:export-filename="ModeloArquitetural.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="138.69728"
+         y="136.40343"
+         id="text1"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="138.69728"
+           y="136.40343">SGBD - MySQL</tspan></text>
+      <rect
+         style="fill:#aaeeff;stroke:#000000;stroke-width:0.5;stroke-dasharray:none"
+         id="rect2"
+         width="99.503807"
+         height="70.6036"
+         x="98.559364"
+         y="55.203793"
+         ry="1.9792104" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="166.47096"
+         y="60.525429"
+         id="text2"><tspan
+           sodipodi:role="line"
+           id="tspan2"
+           style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+           x="166.47096"
+           y="60.525429">Agenda da Beleza</tspan></text>
+      <rect
+         style="fill:#e9ddaf;stroke:#000000;stroke-width:0.302;stroke-dasharray:1.208, 0.302;stroke-dashoffset:0"
+         id="rect3"
+         width="95.708321"
+         height="26.708321"
+         x="100.64584"
+         y="97.02784" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.69771px;fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="102.06128"
+         y="100.81621"
+         id="text3"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           style="font-size:2.69771px;fill:#000000;stroke-width:0.264583"
+           x="102.06128"
+           y="100.81621">Core</tspan></text>
+      <rect
+         style="fill:#e3dbdb;stroke:#000000;stroke-width:0.223074"
+         id="rect4"
+         width="29.776926"
+         height="17.776926"
+         x="102.32092"
+         y="104.11153"
+         ry="1.9792104" />
+      <rect
+         style="fill:#ffe680;stroke:#000000;stroke-width:0.258343"
+         id="rect5"
+         width="29.741657"
+         height="17.741657"
+         x="133.42421"
+         y="104.12917"
+         ry="2.1441445" />
+      <rect
+         style="fill:#e9c6af;stroke:#000000;stroke-width:0.258343"
+         id="rect5-0"
+         width="29.741657"
+         height="17.741657"
+         x="164.43196"
+         y="104.12917"
+         ry="2.1441445" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="172.12122"
+         y="112.72717"
+         id="text5"><tspan
+           sodipodi:role="line"
+           id="tspan5"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="172.12122"
+           y="112.72717">Conexão</tspan><tspan
+           sodipodi:role="line"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="172.12122"
+           y="116.69592"
+           id="tspan6">de dados</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="144.73299"
+         y="114.5968"
+         id="text7"><tspan
+           sodipodi:role="line"
+           id="tspan7"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="144.73299"
+           y="114.5968">DAO</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="111.82109"
+         y="114.51154"
+         id="text8"><tspan
+           sodipodi:role="line"
+           id="tspan8"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="111.82109"
+           y="114.51154">Model</tspan></text>
+      <rect
+         style="fill:#aaffaa;stroke:#000000;stroke-width:0.302021;stroke-dasharray:1.20809, 0.302021;stroke-dashoffset:0"
+         id="rect8"
+         width="95.697975"
+         height="29.697979"
+         x="100.65101"
+         y="64.900459" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.69771px;fill:#000000;stroke:#000000;stroke-width:0.264583"
+         x="102.23878"
+         y="68.884369"
+         id="text9"><tspan
+           sodipodi:role="line"
+           id="tspan9"
+           style="font-size:2.69771px;fill:#000000;stroke:#000000;stroke-width:0.264583"
+           x="102.23878"
+           y="68.884369">JSF - Framework web</tspan></text>
+      <rect
+         style="fill:#d5ffd5;stroke:#000000;stroke-width:0.15;stroke-dasharray:none"
+         id="rect9"
+         width="44.235954"
+         height="19.735952"
+         x="102.89893"
+         y="72.132027"
+         ry="2.7590113" />
+      <rect
+         style="fill:#c4c8b7;stroke:#000000;stroke-width:0.15;stroke-dasharray:none"
+         id="rect9-1"
+         width="44.235954"
+         height="19.735952"
+         x="149.75984"
+         y="72.132027"
+         ry="2.565774" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="114.5948"
+         y="83.072769"
+         id="text10"><tspan
+           sodipodi:role="line"
+           id="tspan10"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="114.5948"
+           y="83.072769">Área pública</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
+         x="156.74478"
+         y="83.479668"
+         id="text10-6"><tspan
+           sodipodi:role="line"
+           id="tspan10-3"
+           style="fill:#000000;stroke:none;stroke-width:0.264583"
+           x="156.74478"
+           y="83.479668">Área administrativa</tspan></text>
+    </g>
+  </g>
+</svg>
