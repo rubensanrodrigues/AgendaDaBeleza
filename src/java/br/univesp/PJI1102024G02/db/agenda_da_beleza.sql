@@ -16,7 +16,7 @@ CREATE TABLE `agendamento` (
   `contato` varchar(50) NOT NULL,
   `nome` varchar(50) DEFAULT NULL,
   `observacao` varchar(200) DEFAULT NULL,
-  `horario` bigint(20) DEFAULT NULL,
-  `chaveacesso` bigint(20) DEFAULT NULL,
+  `horario` bigint(20) NOT NULL,
+  `chaveacesso` bigint(20) NOT NULL,
   PRIMARY KEY (`chaveacesso`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
