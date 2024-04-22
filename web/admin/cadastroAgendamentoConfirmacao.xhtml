@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <body>
+        <ui:composition template="/WEB-INF/template/publicTemplate.xhtml">
+            <ui:param name="pageTitle" value="Agendmento"/>
+            <ui:define name="content">
+                <h3>#{pageTitle} - Área administrativa</h3>
+                <br/>
+                <br/>
+                <h:form>
+                    <h:messages/>
+                    <p><b>Agendamento realizado com sucesso!</b></p>
+                    <h:panelGrid columns="1">
+                        <h:outputLabel for="itHorario" value="Horario"/>
+                        <h:outputText id="itHorario" value="#{strData}" />
+
+                        <h:outputLabel for="itNome" value="Nome:"/>
+                        <h:outputText id="itNome" value="#{mainAdminMB.agendamento.nome}" />
+
+                        <h:outputLabel for="itContato" value="Contato"/>
+                        <h:outputText id="itContato" value="#{mainAdminMB.agendamento.contato}" />
+
+                        <h:outputLabel for="itObservacao" value="Observação"/>
+                        <h:outputText id="itObservacao" value="#{mainAdminMB.agendamento.observacao}" />
+
+                        <h:outputLabel for="itChaveAcesso" value="Chave de acesso"/>
+                        <h:outputText id="itChaveAcesso" value="Sua chave de acesso foi gerada com sucesso: #{mainAdminMB.agendamento.chaveAcesso}" />
+                        <br/>
+                        <br/>
+                        <f:facet name="footer">
+                            <h:link value="Continuar" outcome="index" />
+                        </f:facet>
+                    </h:panelGrid>
+                </h:form>
+                <br />
+            </ui:define>          
+        </ui:composition>
+    </body>
+</html>

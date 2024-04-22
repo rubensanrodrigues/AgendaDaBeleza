@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <body>
+        
+        <ui:composition template="/WEB-INF/template/publicTemplate.xhtml">
+            <ui:param name="pageTitle" value="Agenda da Beleza"/>
+            <ui:define name="content">
+                <h3>#{pageTitle} - Área administrativa</h3>
+                <h:form>
+                    <table>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <th width="15%">Seg</th>
+                            <th width="15%">Ter</th>
+                            <th width="15%">Qua</th>
+                            <th width="15%">Qui</th>
+                            <th width="15%">Sex</th>
+                            <th width="15%">Sab</th>
+                        </tr>
+                        <ui:repeat value="#{mainAdminMB.agendamentos}" var="agendamentoRow">
+                            <tr>
+                                <th class="tagh #{agendamentoRow.tim.cssClass}"><h:outputText value="#{agendamentoRow.tim.dados}" /></th>
+                                <td class="tagd #{agendamentoRow.seg.cssClass}">
+                                    <h:commandLink value="#{agendamentoRow.seg.dados}" action="#{mainAdminMB.cadastro}" rendered="#{not empty agendamentoRow.seg.param}">
+                                        <f:param name="horario" value="#{agendamentoRow.seg.param}"/>
+                                    </h:commandLink>
+                                    <h:outputText value="#{agendamentoRow.seg.dados}" rendered="#{empty agendamentoRow.seg.param}"/>
+                                </td>
+                                <td class="tagd #{agendamentoRow.ter.cssClass}">
+                                    <h:commandLink value="#{agendamentoRow.ter.dados}" action="#{mainAdminMB.cadastro}" rendered="#{not empty agendamentoRow.ter.param}">
+                                        <f:param name="horario" value="#{agendamentoRow.ter.param}"/>
+                                    </h:commandLink>
+                                    <h:outputText value="#{agendamentoRow.ter.dados}" rendered="#{empty agendamentoRow.ter.param}"/>
+                                </td>
+                                <td class="tagd #{agendamentoRow.qua.cssClass}">
+                                    <h:commandLink value="#{agendamentoRow.qua.dados}" action="#{mainAdminMB.cadastro}" rendered="#{not empty agendamentoRow.qua.param}">
+                                        <f:param name="horario" value="#{agendamentoRow.qua.param}"/>
+                                    </h:commandLink>
+                                    <h:outputText value="#{agendamentoRow.qua.dados}" rendered="#{empty agendamentoRow.qua.param}"/>
+                                </td>
+                                <td class="tagd #{agendamentoRow.qui.cssClass}">
+                                    <h:commandLink value="#{agendamentoRow.qui.dados}" action="#{mainAdminMB.cadastro}" rendered="#{not empty agendamentoRow.qui.param}">
+                                        <f:param name="horario" value="#{agendamentoRow.qui.param}"/>
+                                    </h:commandLink>
+                                    <h:outputText value="#{agendamentoRow.qui.dados}" rendered="#{empty agendamentoRow.qui.param}"/>
+                                </td>
+                                <td class="tagd #{agendamentoRow.sex.cssClass}">
+                                    <h:commandLink value="#{agendamentoRow.sex.dados}" action="#{mainAdminMB.cadastro}" rendered="#{not empty agendamentoRow.sex.param}">
+                                        <f:param name="horario" value="#{agendamentoRow.sex.param}"/>
+                                    </h:commandLink>
+                                    <h:outputText value="#{agendamentoRow.sex.dados}" rendered="#{empty agendamentoRow.sex.param}"/>
+                                </td>
+                                <td class="tagd #{agendamentoRow.sab.cssClass}">
+                                    <h:commandLink value="#{agendamentoRow.sab.dados}" action="#{mainAdminMB.cadastro}" rendered="#{not empty agendamentoRow.sab.param}">
+                                        <f:param name="horario" value="#{agendamentoRow.sab.param}"/>
+                                    </h:commandLink>
+                                    <h:outputText value="#{agendamentoRow.sab.dados}" rendered="#{empty agendamentoRow.sab.param}"/>
+                                </td>
+                            </tr>
+                        </ui:repeat>
+                    </table>
+                </h:form>
+            </ui:define>          
+        </ui:composition>
+    </body>
+</html>
