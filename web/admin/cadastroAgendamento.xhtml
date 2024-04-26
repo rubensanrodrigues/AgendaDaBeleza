@@ -10,13 +10,14 @@
             <ui:param name="pageTitle" value="Agendmento"/>
             <ui:define name="content">
                 <h3>#{pageTitle} - Área administrativa</h3>
-                
+                <br />
                 <h:form>
+                    <h:link outcome="detalheHorario" value="Voltar para listagem"/>
                     <h:messages/>
-                    <h:link outcome="index" value="Página inicial"/>
+                    <br />
+                    <br />
                     <h:panelGrid columns="1">
-                        <h:outputLabel for="itHorario" value="Horario"/>
-                        <h:outputText id="itHorario" value="#{strData}" />
+                        <h:outputText style="font-weight: bold;" id="itHorario" value="#{strDataFormatada}" />
 
                         <h:outputLabel for="itNome" value="Nome:"/>
                         <h:inputText id="itNome" value="#{mainAdminMB.agendamento.nome}">

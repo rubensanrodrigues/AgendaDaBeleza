@@ -6,7 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,7 +48,7 @@ public class AgendamentoDAO {
             System.out.println("ERR: AgendamentoDAO.insert " + e.getMessage());
             a = null;
         }
-        
+
         return a;
     }
 
@@ -67,22 +69,26 @@ public class AgendamentoDAO {
             System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
             a = null;
         }
-        
+
         return a;
     }
 
     public void delete(Agendamento a) {
+        delete(a.getChaveAcesso());
+    }
+    
+    public void delete(Long chaveAcesso) {
         try {
             Connection c = DBConnect.getConnection();
             PreparedStatement preparedStatement = c.prepareStatement("DELETE FROM agendamento WHERE chaveacesso=?");
-            preparedStatement.setLong(1, a.getChaveAcesso());
+            preparedStatement.setLong(1, chaveAcesso);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
         } catch (Exception e) {
             System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
         }
-    }
+    }    
 
     public Agendamento getLastByContato(String contato) {
         Agendamento a = null;
@@ -127,6 +133,23 @@ public class AgendamentoDAO {
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 a = fill(rs);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return a;
+    }
+
+    public List<Agendamento> getAllByHorario(Long horario) {
+        List<Agendamento> a = new ArrayList<Agendamento>();
+        try {
+            Connection c = DBConnect.getConnection();
+            PreparedStatement preparedStatement = c.prepareStatement("SELECT contato, nome, observacao, horario, chaveacesso FROM agendamento WHERE horario=?");
+            preparedStatement.setLong(1, horario);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                a.add(fill(rs));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

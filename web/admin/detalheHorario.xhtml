@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="/WEB-INF/template/publicTemplate.xhtml">
+            <ui:param name="pageTitle" value="Agenda da Beleza"/>
+            <ui:define name="content">
+                <h3>#{pageTitle} - Área administrativa - #{strDataFormatada}</h3>
+                <h:link outcome="index" value="Página inicial"/>
+                <br />
+                <br />
+                <h:form>
+                    <br />
+                    <h:commandLink action="#{mainAdminMB.cadastro}" >
+                        <f:param name="horario" value="#{horario}" />
+                        Agendar neste horário <img height="14px" src="../resources/add.svg" alt="alt" />
+                    </h:commandLink>
+                    <br />
+                    <br />
+                    <table>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td width="60px">
+                                <strong>Ações</strong>
+                            </td>
+                            <td width="15%">
+                                <strong>Nome</strong>
+                            </td>
+                            <td width="15%">
+                                <strong>Contato</strong>
+                            </td>
+                            <td>
+                                <strong>Observação</strong>
+
+                            </td>
+                        </tr>
+                        <ui:repeat value="#{mainAdminMB.horarioAgendamentos}" var="horarioAgendamento">
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td>
+                                    <h:commandLink action="#{mainAdminMB.editar}" title="Editar este agendamento" >
+                                        <f:param name="chaveAcesso" value="#{horarioAgendamento.chaveAcesso}" />
+                                        <img height="14px" src="../resources/edit.svg" alt="Editar este agendamento" />
+                                    </h:commandLink>&nbsp;&nbsp;
+                                    <h:commandLink action="#{mainAdminMB.deletar}" title="Deletar permanetemente este agendamento">
+                                        <f:param name="chaveAcesso" value="#{horarioAgendamento.chaveAcesso}" />
+                                        <img height="14px" src="../resources/delete.svg" alt="Deletar permanetemente este agendamento" />
+                                    </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{horarioAgendamento.nome}"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{horarioAgendamento.contato}"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{horarioAgendamento.observacao}"/>
+                                </td>
+                            </tr>
+                        </ui:repeat>
+                    </table>
+                </h:form>
+            </ui:define>          
+        </ui:composition>
+    </body>
+</html>
