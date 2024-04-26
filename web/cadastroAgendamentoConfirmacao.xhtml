@@ -11,25 +11,21 @@
             <ui:define name="content">
                 <h3>#{pageTitle}</h3>
                 <br/>
+                <p><strong>Agendamento realizado com sucesso!</strong></p>
                 <br/>
                 <h:form>
                     <h:messages/>
-                    <p><b>Agendamento realizado com sucesso!</b></p>
                     <h:panelGrid columns="1">
-                        <h:outputLabel for="itHorario" value="Horario"/>
-                        <h:outputText id="itHorario" value="#{strData}" />
+                        <h:outputText style="font-weight: bold;" id="itHorario" value="#{strDataFormatada}" />
 
-                        <h:outputLabel for="itNome" value="Nome:"/>
+                        <h:outputLabel style="font-style: italic;" for="itNome" value="Nome:"/>
                         <h:outputText id="itNome" value="#{mainPublicMB.agendamento.nome}" />
 
-                        <h:outputLabel for="itContato" value="Contato"/>
+                        <h:outputLabel style="font-style: italic;" for="itContato" value="Contato"/>
                         <h:outputText id="itContato" value="#{mainPublicMB.agendamento.contato}" />
 
-                        <h:outputLabel for="itObservacao" value="Observação"/>
+                        <h:outputLabel style="font-style: italic;" for="itObservacao" value="Observação"/>
                         <h:outputText id="itObservacao" value="#{mainPublicMB.agendamento.observacao}" />
-
-                        <h:outputLabel for="itChaveAcesso" value="Chave de acesso"/>
-                        <h:outputText id="itChaveAcesso" value="Sua chave de acesso foi gerada com sucesso: #{mainPublicMB.agendamento.chaveAcesso}" />
                         <br/>
                         <br/>
                         <f:facet name="footer">

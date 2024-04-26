@@ -18,15 +18,19 @@ import java.util.logging.Logger;
  */
 public class AgendamentoDAO {
 
+    private Logger logger;
+    
+    public AgendamentoDAO() {
+        logger = Logger.getLogger(AgendamentoDAO.class.getName());
+    }
+    
+
     public void save(Agendamento a) {
         if (a.getChaveAcesso() == null) {
-
             Long chaveAcesso = new Date().getTime();
             a.setChaveAcesso(chaveAcesso);
-            System.out.println(a.toString());
             insert(a);
         } else {
-            System.out.println(a.toString());
             update(a);
         }
     }
@@ -42,10 +46,10 @@ public class AgendamentoDAO {
             preparedStatement.setLong(5, a.getChaveAcesso());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("ERR: AgendamentoDAO.insert " + e.getMessage());
+            logger.log(Level.SEVERE, "ERR: AgendamentoDAO.insert ".concat(e.getMessage()));
             a = null;
         } catch (Exception e) {
-            System.out.println("ERR: AgendamentoDAO.insert " + e.getMessage());
+            logger.log(Level.SEVERE, "ERR: AgendamentoDAO.insert ".concat(e.getMessage()));
             a = null;
         }
 
@@ -63,10 +67,10 @@ public class AgendamentoDAO {
             preparedStatement.setLong(5, a.getChaveAcesso());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
+            logger.log(Level.SEVERE, "ERR: AgendamentoDAO.update ".concat(e.getMessage()));
             a = null;
         } catch (Exception e) {
-            System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
+            logger.log(Level.SEVERE, "ERR: AgendamentoDAO.update ".concat(e.getMessage()));
             a = null;
         }
 
@@ -84,9 +88,9 @@ public class AgendamentoDAO {
             preparedStatement.setLong(1, chaveAcesso);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.delete ".concat(e.getMessage()));
         } catch (Exception e) {
-            System.out.println("ERR: AgendamentoDAO.update " + e.getMessage());
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.delete ".concat(e.getMessage()));
         }
     }    
 
@@ -101,7 +105,7 @@ public class AgendamentoDAO {
                 a = fill(rs);
             }
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.getLastByContato ".concat(ex.getMessage()));
         }
 
         return a;
@@ -118,7 +122,7 @@ public class AgendamentoDAO {
                 a = fill(rs);
             }
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.getByChaveAcesso ".concat(ex.getMessage()));
         }
 
         return a;
@@ -135,14 +139,14 @@ public class AgendamentoDAO {
                 a = fill(rs);
             }
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.getByHorario ".concat(ex.getMessage()));
         }
 
         return a;
     }
 
     public List<Agendamento> getAllByHorario(Long horario) {
-        List<Agendamento> a = new ArrayList<Agendamento>();
+        List<Agendamento> a = new ArrayList<>();
         try {
             Connection c = DBConnect.getConnection();
             PreparedStatement preparedStatement = c.prepareStatement("SELECT contato, nome, observacao, horario, chaveacesso FROM agendamento WHERE horario=?");
@@ -152,7 +156,7 @@ public class AgendamentoDAO {
                 a.add(fill(rs));
             }
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.getAllByHorario ".concat(ex.getMessage()));
         }
 
         return a;
@@ -167,7 +171,7 @@ public class AgendamentoDAO {
             a.setHorario(rs.getLong("horario"));
             a.setChaveAcesso(rs.getLong("chaveacesso"));
         } catch (SQLException ex) {
-            Logger.getLogger(AgendamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE,"ERR: AgendamentoDAO.fill ".concat(ex.getMessage()));
             a = null;
         }
 
