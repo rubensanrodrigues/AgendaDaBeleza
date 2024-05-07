@@ -12,7 +12,7 @@
     </h:head>
     <h:body>
         <div id="top">
-            <ui:insert name="top"><h2>#{pageTitle}</h2></ui:insert>
+            <ui:insert name="top"><h2>#{pageTitle} <img width="50px" src="#{request.contextPath}/resources/hair-salon-icon.png" /></h2></ui:insert>
         </div>
         <div id="content" class="center_content">
             <ui:insert name="content">Content</ui:insert>
@@ -25,7 +25,10 @@
                     Software desenvovido pelo Grupo 02 do Projeto Integrador<br />
                     
                 </p>
+                    <img width="200px" src="#{request.contextPath}/resources/univespgrouplogo_2.png" />
                 </div>
+                <div class="footertextalt"><span class="footertext2"> <b>Autores</b> </span></div>
+                <div class="hide"> <span class="footertext"> Antônio Fernandes Braga Neto, 2205996 <br /> Douglas Andrade Fernandes, 2210166 <br /> Elisandra Márcia Rodrigues, 2209506 <br /> Leonardo Mauricio Ramos, 2211065 <br /> Pablo Miguel dos Santos Andrade, 2214448 <br /> Rubens Antônio Rodrigues, 2200586 </span></div>
             </ui:insert>
         </div>
     </h:body>
